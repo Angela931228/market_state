@@ -112,6 +112,11 @@ for(i in 1:length(rMergeTest)){
   }else {
     signals<- append(signals,'S')
   }
+  #if(changeRate>=0){
+   # signals<- append(signals, 'U')
+  #}else{
+   # signals<- append(signals, 'S')
+  #}
   changeRates <- rbind(changeRates,changeRate)
   currentIndex<- newIndex
   comIndex <- rbind(comIndex,currentIndex )

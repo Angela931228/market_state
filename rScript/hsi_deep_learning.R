@@ -5,10 +5,16 @@ hsi_data<- h2o.importFile("hsi_4factor.csv")
 hsi_train <- hsi_data[c(1:70),]
 hsi_test <- hsi_data[c(71:93),]
 
-model_hsi<- h2o.deeplearning(x=colnames(hsi_4factor)[c(3,4,5,6)],y=colnames(hsi_4factor)[2], training_frame = hsi_train, validation_frame = hsi_test)
+model_hsi<- h2o.deeplearning(x=colnames(hsi_4factor)[c(3,4,5,6)],y=colnames(hsi_4factor)[2], hidden = c(350,350), training_frame = hsi_train, validation_frame = hsi_test)
+print(model_hsi)
 h2o.performance(model_hsi,train =TRUE)
 h2o.performance(model_hsi,valid=TRUE)
+m<-svm(hsi~., data=hsi_4factor[-1,],cross=10,gamma = 0.1)
+summary(m)
+
+sink("hsi_dl.txt", append=FALSE, split=FALSE)
 print(model_hsi)
+sink()
 
 #without lag
 hsi_data_nolag<- h2o.importFile("hsi_4factor_nolag.csv")

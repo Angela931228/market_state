@@ -2,13 +2,13 @@ Model Details:
 ==============
 
 H2OMultinomialModel: deeplearning
-Model ID:  DeepLearning_model_R_1455516664782_329 
-Status of Neuron Layers: predicting hsi, 3-class classification, multinomial distribution, CrossEntropy loss, 44,203 weights/biases, 527.1 KB, 700 training samples, mini-batch size 1
+Model ID:  DeepLearning_model_R_1455516664782_733 
+Status of Neuron Layers: predicting hsi, 3-class classification, multinomial distribution, CrossEntropy loss, 44,203 weights/biases, 527.1 KB, 750 training samples, mini-batch size 1
   layer units      type dropout       l1       l2 mean_rate rate_RMS momentum mean_weight weight_RMS mean_bias bias_RMS
 1     1    16     Input  0.00 %                                                                                        
-2     2   200 Rectifier  0.00 % 0.000000 0.000000  0.253790 0.430476 0.000000    0.001675   0.099077  0.492428 0.006958
-3     3   200 Rectifier  0.00 % 0.000000 0.000000  0.021194 0.119989 0.000000   -0.000485   0.069497  0.999146 0.004173
-4     4     3   Softmax         0.000000 0.000000  0.025158 0.147960 0.000000   -0.006315   0.392821 -0.000718 0.000737
+2     2   200 Rectifier  0.00 % 0.000000 0.000000  0.253341 0.430697 0.000000    0.000848   0.098194  0.490238 0.006386
+3     3   200 Rectifier  0.00 % 0.000000 0.000000  0.026178 0.137118 0.000000   -0.000076   0.069381  0.998947 0.003066
+4     4     3   Softmax         0.000000 0.000000  0.026821 0.155723 0.000000   -0.011793   0.398991 -0.000188 0.000430
 
 
 H2OMultinomialMetrics: deeplearning
@@ -19,23 +19,23 @@ Training Set Metrics:
 =====================
 Metrics reported on temporary (load-balanced) training frame 
 
-MSE: (Extract with `h2o.mse`) 0.3686957
-R^2: (Extract with `h2o.r2`) 0.5934723
-Logloss: (Extract with `h2o.logloss`) 1.499652
+MSE: (Extract with `h2o.mse`) 0.4048644
+R^2: (Extract with `h2o.r2`) 0.5477835
+Logloss: (Extract with `h2o.logloss`) 1.524991
 Confusion Matrix: Extract with `h2o.confusionMatrix(<model>,train = TRUE)`)
 =========================================================================
-        D S  U     Error    Rate
-D      15 0 14 0.4827586 14 / 29
-S       2 0  4 1.0000000   6 / 6
-U      13 0 22 0.3714286 13 / 35
-Totals 30 0 40 0.4714286 33 / 70
+        D  S  U     Error    Rate
+D      23  4  3 0.2333333  7 / 30
+S       3  3  1 0.5714286   4 / 7
+U      20  5 13 0.6578947 25 / 38
+Totals 46 12 17 0.4800000 36 / 75
 
 Hit Ratio Table: Extract with `h2o.hit_ratio_table(<model>,train = TRUE)`
 =======================================================================
 Top-3 Hit Ratios: 
   k hit_ratio
-1 1  0.528571
-2 2  0.914286
+1 1  0.520000
+2 2  0.746667
 3 3  1.000000
 
 
@@ -47,23 +47,23 @@ Validation Set Metrics:
 =====================
 Metrics reported on temporary (load-balanced) validation frame 
 
-MSE: (Extract with `h2o.mse`) 0.3529125
-R^2: (Extract with `h2o.r2`) 0.6061378
-Logloss: (Extract with `h2o.logloss`) 1.703454
+MSE: (Extract with `h2o.mse`) 0.4974367
+R^2: (Extract with `h2o.r2`) 0.4715755
+Logloss: (Extract with `h2o.logloss`) 1.71796
 Confusion Matrix: Extract with `h2o.confusionMatrix(<model>,valid = TRUE)`)
 =========================================================================
-        D S  U     Error   Rate
-D       5 0  4 0.4444444  4 / 9
-S       2 0  0 1.0000000  2 / 2
-U       3 0  9 0.2500000 3 / 12
-Totals 10 0 13 0.3913043 9 / 23
+        D S U     Error    Rate
+D       5 2 1 0.3750000   3 / 8
+S       1 0 0 1.0000000   1 / 1
+U       4 4 1 0.8888889   8 / 9
+Totals 10 6 2 0.6666667 12 / 18
 
 Hit Ratio Table: Extract with `h2o.hit_ratio_table(<model>,valid = TRUE)`
 =======================================================================
 Top-3 Hit Ratios: 
   k hit_ratio
-1 1  0.608696
-2 2  0.913043
+1 1  0.333333
+2 2  0.666667
 3 3  1.000000
 
 

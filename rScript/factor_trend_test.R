@@ -55,6 +55,11 @@ getNdaysSignalBeofore <- function(factorData,factorDataRes,date,nDays){
     return('D')
   }else
     return('S')
+  #if(changeRate>=0){
+   # return('U')
+  #}else 
+    #return('S')
+  
 }
 
 cl1_signals<-{}
