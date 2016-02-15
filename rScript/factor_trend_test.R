@@ -63,8 +63,15 @@ spx_signals<-{}
 usd_signals<-{}
 for(i in 1: (nrow(hsi_seg_signal)-1)){
   cl1_signals<- rbind(cl1_signals, getNdaysSignalBeofore(cl1_price, cl1_emd_res,hsi_seg_signal[i+1,1],20))
-  gold_signals<- rbind(cl1_signals, getNdaysSignalBeofore(gold_price, gold_emd_res,hsi_seg_signal[i+1,1],20))
-  spx_signals<- rbind(cl1_signals, getNdaysSignalBeofore(spx_price, spx_emd_res,hsi_seg_signal[i+1,1],20))
-  usd_signals<- rbind(cl1_signals, getNdaysSignalBeofore(usd_price, usd_emd_res,hsi_seg_signal[i+1,1],20))
+  gold_signals<- rbind(gold_signals, getNdaysSignalBeofore(gold_price, gold_emd_res,hsi_seg_signal[i+1,1],20))
+  spx_signals<- rbind(spx_signals, getNdaysSignalBeofore(spx_price, spx_emd_res,hsi_seg_signal[i+1,1],20))
+  usd_signals<- rbind(usd_signals, getNdaysSignalBeofore(usd_price, usd_emd_res,hsi_seg_signal[i+1,1],20))
 }
 
+hsi_4factor<-data.frame(hsi_seg_signal[-1,1],hsi_seg_signal[-1,2],cl1_signals,gold_signals,spx_signals,usd_signals)
+colnames(hsi_4factor)<- c("date", "hsi","cl1","gold","spx","usd")
+write.csv(hsi_4factor, "hsi_4factor.csv")
+
+hsi_4factor_nolag<-data.frame(hsi_seg_signal[-length(hsi_seg_signal),1],hsi_seg_signal[-length(hsi_seg_signal),2],cl1_signals,gold_signals,spx_signals,usd_signals)
+colnames(hsi_4factor_nolag)<- c("date", "hsi","cl1","gold","spx","usd")
+write.csv(hsi_4factor_nolag, "hsi_4factor_nolag.csv")
